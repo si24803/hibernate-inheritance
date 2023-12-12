@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-HibernateInheritanceApplication<hibernate-inheritance>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "org.psantos.hibernateinheritance.HibernateInheritanceApplication",
+            "projectName": "hibernate-inheritance",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

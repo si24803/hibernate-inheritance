@@ -1,0 +1,28 @@
+         
+spring:
+  datasource:
+    url: jdbc:h2:file:./inheritance-db
+    username: inheritance
+    password: password
+    hikari:
+      connectionTimeout: 20000
+      maximumPoolSize: 10
+      minimumIdle: 2
+  jpa:
+    hibernate:
+      ddl-auto: create
+    database-platform: org.hibernate.dialect.H2Dialect
+  devtools:
+    add-properties: true
+
+logging:
+  level:
+    default: DEBUG
+    '[org.psantos.hibernateinheritance]': DEBUG
+  pattern:
+    file: "%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level %logger{36} - %msg%n"
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level %logger{36} - %msg%n"
+  file:
+    name: hibernate-inheritance.log
+    max-size: 100MB
+    max-history: 30

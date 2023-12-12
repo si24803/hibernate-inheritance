@@ -1,0 +1,66 @@
+server:
+  port: 8080
+  #servlet:
+  #  contextPath: /device
+
+management:
+  endpoint:
+    health:
+      show-details: always
+      enabled: true
+      probes:
+        enabled: true
+    info:
+      enabled: true      
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+    loggers:
+      enabled: true
+    sessions:
+      enabled: true
+    security:
+      enabled: true
+    liquibase:
+      enabled: true    
+  endpoints:       
+    web:
+      exposure:
+        include:
+          - health
+          - prometheus
+          - info
+          - metrics
+          - sessions
+          - loggers  
+          - security
+          - liquibase
+          
+spring:
+  datasource:
+    url: jdbc:h2:file:./inheritance-db
+    username: inheritance
+    password: password
+    hikari:
+      connectionTimeout: 20000
+      maximumPoolSize: 10
+      minimumIdle: 2
+  jpa:
+    hibernate:
+      ddl-auto: create
+    database-platform: org.hibernate.dialect.H2Dialect
+  devtools:
+    add-properties: true
+
+logging:
+  level:
+    default: DEBUG
+    '[org.psantos.hibernateinheritance]': DEBUG
+  pattern:
+    file: "%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level %logger{36} - %msg%n"
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level %logger{36} - %msg%n"
+  file:
+    name: hibernate-inheritance.log
+    max-size: 100MB
+    max-history: 30
