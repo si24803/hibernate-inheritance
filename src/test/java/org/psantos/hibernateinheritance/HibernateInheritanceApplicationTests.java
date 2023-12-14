@@ -37,7 +37,7 @@ private PetRepository petRepo;
 void addOwners(){
 	List<Owner> owners = new ArrayList<>();
 	owners.add(new Owner(null, "Pedro", "Rua Direita 3", "919191919", "111222333", null));
-	owners.add(new Owner(null, "Pedro", "Rua Direita 3", "919191919", "111222333", null));
+	owners.add(new Owner(null, "Pedro", "Rua Direita 30", "919191919", "444555666", null));
 
 	owners.forEach(x -> ownerRepo.save(x));
 
