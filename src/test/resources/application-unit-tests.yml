@@ -10,7 +10,7 @@ spring:
       minimumIdle: 2
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: update #-drop
     database-platform: org.hibernate.dialect.H2Dialect
   devtools:
     add-properties: true
